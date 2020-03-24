@@ -1,0 +1,6 @@
+C:\Users\krisz\Documents\Study\Egyetem\Mesterséges Intelligencia alapjai\Beadandó\SearchInAI\SearchInAI\SearchInAI\bin\Debug\SearchInAI.exe.config
+C:\Users\krisz\Documents\Study\Egyetem\Mesterséges Intelligencia alapjai\Beadandó\SearchInAI\SearchInAI\SearchInAI\bin\Debug\SearchInAI.exe
+C:\Users\krisz\Documents\Study\Egyetem\Mesterséges Intelligencia alapjai\Beadandó\SearchInAI\SearchInAI\SearchInAI\bin\Debug\SearchInAI.pdb
+C:\Users\krisz\Documents\Study\Egyetem\Mesterséges Intelligencia alapjai\Beadandó\SearchInAI\SearchInAI\SearchInAI\obj\Debug\SearchInAI.csprojAssemblyReference.cache
+C:\Users\krisz\Documents\Study\Egyetem\Mesterséges Intelligencia alapjai\Beadandó\SearchInAI\SearchInAI\SearchInAI\obj\Debug\SearchInAI.exe
+C:\Users\krisz\Documents\Study\Egyetem\Mesterséges Intelligencia alapjai\Beadandó\SearchInAI\SearchInAI\SearchInAI\obj\Debug\SearchInAI.pdb
