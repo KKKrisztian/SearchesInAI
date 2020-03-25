@@ -131,7 +131,9 @@ namespace SearchInAI
             addConnectingCitiesToEachOther(szolnok, kecskemet, 46);
 
 
-            runAStarSearch(gyor);
+            runAStarSearch(salgotarjan);
+
+            Console.ReadKey();
 
 
         }
