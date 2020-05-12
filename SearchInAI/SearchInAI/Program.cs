@@ -30,6 +30,7 @@ namespace SearchInAI
                 int bestSzegedPlusCurrentCityDistance = int.MaxValue;
                 City bestConnectingCity = new City();
                 int distanceBetweenCities = 0;
+              
 
                 Console.Write(currentCity.getName() + " connects to: ");
 
@@ -64,8 +65,62 @@ namespace SearchInAI
             }
 
             Console.WriteLine("Reached Szeged (goal node)");
-            Console.WriteLine("Total Cost: " + totalCost + "kilometers\n");
+            Console.WriteLine("Total Cost: " + totalCost + " kilometers\n");
         }
+        static void runGreadySearch(City currentCity)
+        {
+            Console.WriteLine("Starting in " + currentCity.getName() + "...\n");
+            int totalCost = 0;
+            Dictionary<City, int> currentCityConnectingCities = new Dictionary<City, int>();
+
+
+            while (currentCity.getKilometersToSzeged() != 0)
+            {
+                currentCityConnectingCities = currentCity.getConnectingCities();
+                int currentSzegedPlusCurrentCityDistance = 0;
+                int bestSzegedPlusCurrentCityDistance = int.MaxValue;
+                City bestConnectingCity = new City();
+                int distanceBetweenCities = 0;
+
+
+                Console.Write(currentCity.getName() + " connects to: ");
+
+                foreach (KeyValuePair<City, int> connectingCity in currentCityConnectingCities)
+                {
+                    currentSzegedPlusCurrentCityDistance =
+                       connectingCity.Key.getKilometersToSzeged();
+
+                    Console.Write(connectingCity.Key.getName() + "(" + currentSzegedPlusCurrentCityDistance + ")");
+
+                    if (currentSzegedPlusCurrentCityDistance < bestSzegedPlusCurrentCityDistance)
+                    {
+                        bestConnectingCity = connectingCity.Key;
+
+                        distanceBetweenCities = connectingCity.Value;
+
+                        bestSzegedPlusCurrentCityDistance =
+                            connectingCity.Key.getKilometersToSzeged();
+
+                    }
+
+                    if (!connectingCity.Key.Equals(currentCityConnectingCities.Last().Key))
+                    {
+                        Console.Write(", ");
+                    }
+
+                }
+
+                Console.WriteLine("\nTraveled " + distanceBetweenCities + "kilometers to " + bestConnectingCity.getName() + "\n");
+                totalCost += distanceBetweenCities;
+                currentCity = bestConnectingCity;
+            }
+
+            Console.WriteLine("Reached Szeged (goal node)");
+            Console.WriteLine("Total Cost: " + totalCost + " kilometers\n");
+        }
+
+        
+
         static void Main(string[] args)
         {
 
@@ -131,7 +186,8 @@ namespace SearchInAI
             addConnectingCitiesToEachOther(szolnok, kecskemet, 46);
 
 
-            runAStarSearch(salgotarjan);
+            runAStarSearch(gyor);
+            runGreadySearch(gyor);
 
             Console.ReadKey();
 
